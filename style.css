@@ -1,0 +1,42 @@
+/*cartes de 100 px par 100 px*/
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  background-color: rgb(189, 247, 189);
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  grid-gap: 20px;
+  justify-content: center;
+  margin: 30px, auto;
+}
+
+/*masquer les cartes*/
+.card {
+  background-color: #ccc;
+  border-radius : 5px;
+  cursor : pointer;
+}
+
+.card .card-content {
+  opacity : 0;
+}
+
+.card.flip .card-content {
+  opacity: 1;
+}
+
+/*cartes trouvées*/
+.card.matched {
+  border : solid 4px rgb(130, 38, 250);
+  box-sizing : border-box; /*bordure ne va pas aggrandir mais va recouvrir l'élément*/
+  cursor: default; /*enleve le curseur*/
+}
+
+.card .card-content {
+  max-width: 100%;
+}
